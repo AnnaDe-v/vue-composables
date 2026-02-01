@@ -1,18 +1,18 @@
-export type ValidatorFunction = (value: any) => true | string;
+export type ValidatorFunction<T = unknown> = (value: T) => true | string;
 
-export interface ValidationRule {
-  validator: ValidatorFunction;
+export interface ValidationRule<T = unknown> {
+  validator: ValidatorFunction<T>;
   message?: string;
 }
 
-export interface FieldConfig {
-  initialValue?: any;
-  rules?: ValidationRule[];
+export interface FieldConfig<T = unknown> {
+  initialValue?: T;
+  rules?: Array<ValidationRule<unknown>>;
   hint?: string;
 }
 
-export interface FieldState {
-  value: any;
+export interface FieldState<T = unknown> {
+  value: T;
   errors: string[];
   focused: boolean;
   dirty: boolean;
