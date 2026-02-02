@@ -7,7 +7,7 @@ import { required, email, minLength, maxLength, min, max, phone, pattern } from 
 const formConfig = {
   username: {
     initialValue: '',
-    hint: 'Только латинские буквы, цифры и подчеркивание (3-20 символов)',
+    hint: 'Имя (3-20 символов)',
     rules: [
       { validator: required('Имя пользователя обязательно') },
       { validator: minLength(3, 'Минимум 3 символа') },

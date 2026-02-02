@@ -66,7 +66,6 @@ const deleteUser = async () => {
 
 <template>
   <div class="http-demo">
-    <h2>useHttp Demo</h2>
     <p class="description">Запросы к JSONPlaceholder</p>
 
     <section class="demo-section">
