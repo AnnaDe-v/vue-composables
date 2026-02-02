@@ -2,7 +2,7 @@ import { computed, reactive } from 'vue';
 import type { 
   FormConfig, 
   FormFields 
-} from '../types/validation.types';
+} from '../types/validation';
 
 export function useValidation(config: FormConfig) {
   const fields = reactive<FormFields>({});

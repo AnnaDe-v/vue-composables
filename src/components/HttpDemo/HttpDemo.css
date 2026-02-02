@@ -1,0 +1,102 @@
+.http-demo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.demo-section {
+  background: var(--color-bg-page);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+h3 {
+  color: var(--color-text);
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.box {
+  padding: 15px;
+  background: var(--color-alpha);
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.box-accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.box-danger {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.box-primary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.user-card {
+  background: var(--color-bg-page);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+.user-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-text);
+}
+
+.user-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+

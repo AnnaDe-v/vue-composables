@@ -7,6 +7,19 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  
+  --color-primary: #867de6;
+  --color-danger: #dc3545;
+  --color-accent: #2196f3;
+  --color-text: #7b7b7b;
+  --color-border: #ddd;
+  --color-bg: #f5f5f5;
+  --color-bg-page: #ffffff;
+  --color-bg-app: rgba(234, 234, 234, 0.491);
+  
+  --color-alpha: rgba(0, 0, 0, 0.1);
+  
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -15,35 +28,59 @@ body {
   min-height: 100vh;
 }
 
-button {
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: cornflowerblue;
-}
-
 input,
 textarea,
 select {
   font-family: inherit;
   font-size: 1em;
   padding: 0.6em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background-color: white;
+  background-color: var(--color-bg-page);
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: cornflowerblue;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-alpha);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg-page);
+}
+
+.btn-danger {
+  background: var(--color-danger);
+  color: var(--color-bg-page);
+}
+
+.btn-danger:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: var(--color-text);
+  color: var(--color-bg-page);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  opacity: 0.9;
 }

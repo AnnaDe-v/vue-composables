@@ -1,4 +1,4 @@
-import type { ValidatorFunction } from '../types/validation.types';
+import type { ValidatorFunction } from '../types/validation';
 
 
 export const required = (message = 'Поле обязательно для заполнения'): ValidatorFunction<unknown> => {

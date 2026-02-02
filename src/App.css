@@ -1,0 +1,51 @@
+.app {
+  min-height: 100vh;
+  background: var(--color-bg-app);
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: var(--color-bg-page);
+  border-bottom: 2px solid var(--color-border);
+  padding: 0;
+}
+
+.tab {
+  padding: 1rem 2rem;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  top: 2px;
+}
+
+.tab:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.demo-section {
+  margin-bottom: 2rem;
+}

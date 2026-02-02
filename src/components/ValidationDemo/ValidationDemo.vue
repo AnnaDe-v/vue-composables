@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useValidation } from '../composables/useValidation';
-import type { FormConfig } from '../types/validation.types';
-import { required, email, minLength, maxLength, min, max, phone, pattern } from '../utils/validators';
+import { useValidation } from '../../composables';
+import type { FormConfig } from '../../types';
+import { required, email, minLength, maxLength, min, max, phone, pattern } from '../../utils';
 
 const formConfig = {
   username: {
@@ -230,82 +230,5 @@ const handleReset = () => {
 </template>
 
 <style scoped>
-.validation-demo {
-  background: white;
-  border-radius: 9px;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group.error input,
-.form-group.error textarea {
-  border-color: red;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.required {
-  color: red;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-}
-
-.error-message {
-  margin-top: 0.5rem;
-  color: red;
-  font-size: 0.875rem;
-}
-
-.hint {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.submit-result {
-  margin: 1.5rem 0;
-  padding: 1rem;
-}
-
-.submit-result .error-message {
-  color: red;
-}
-
-.form-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn {
-  flex: 1;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: cornflowerblue;
-}
-
-.btn-primary:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
+@import './ValidationDemo.css';
 </style>

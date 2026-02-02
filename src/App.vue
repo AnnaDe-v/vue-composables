@@ -1,13 +1,44 @@
 <script setup lang="ts">
-import ValidationDemo from './components/ValidationDemo.vue';
+import { ref, watch } from 'vue';
+import { ValidationDemo, HttpDemo } from './components';
+
+const STORAGE_KEY = 'active-tab';
+
+const getSavedTab = (): 'validation' | 'http' => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  return (saved === 'validation' || saved === 'http') ? saved : 'validation';
+};
+
+const activeTab = ref<'validation' | 'http'>(getSavedTab());
+
+watch(activeTab, (newTab) => {
+  localStorage.setItem(STORAGE_KEY, newTab);
+});
 </script>
 
 <template>
   <div class="app">
+    <nav class="tabs">
+      <button 
+        @click="activeTab = 'validation'" 
+        :class="['tab', { active: activeTab === 'validation' }]"
+      >
+        Validation
+      </button>
+      <button 
+        @click="activeTab = 'http'" 
+        :class="['tab', { active: activeTab === 'http' }]"
+      >
+        Http
+      </button>
+    </nav>
+
     <main>
       <div class="container">
         <section class="demo-section">
-          <ValidationDemo />
+          <keep-alive>
+            <component :is="activeTab === 'validation' ? ValidationDemo : HttpDemo" />
+          </keep-alive>
         </section>
       </div>
     </main>
@@ -15,18 +46,5 @@ import ValidationDemo from './components/ValidationDemo.vue';
 </template>
 
 <style scoped>
-.app {
-  min-height: 100vh;
-  background: rgba(234, 234, 234, 0.491);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.demo-section {
-  margin-bottom: 2rem;
-}
+@import './App.css';
 </style>
