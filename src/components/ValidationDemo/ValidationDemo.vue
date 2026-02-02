@@ -24,7 +24,7 @@ const formConfig = {
   },
   phone: {
     initialValue: '',
-    hint: 'Любой международный формат (10-15 цифр)',
+    hint: 'Любой формат (10-15 цифр)',
     rules: [
       { validator: required('Телефон обязателен') },
       { validator: phone('Некорректный номер телефона') }
